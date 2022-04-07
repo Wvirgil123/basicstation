@@ -66,7 +66,8 @@ else()
 	add_subdirectory(deps/lgw)
 endif()
 
-add_subdirectory(deps/mbedtls)
+#add_subdirectory(deps/mbedtls)
+find_package(mbedTLS)
 
 set(LIB s2core)
 set(APP station)
@@ -92,8 +93,8 @@ target_compile_definitions(
 		CFG_linux
 		CFG_no_leds
 		CFG_lgw1
-		CFG_tlsdebug
 
+		CFG_argp
 		CFG_platform_${PLATFORM}
 		CFG_platform="${PLATFORM}"
 		CFG_variant_${VARIANT}
